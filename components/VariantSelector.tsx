@@ -13,25 +13,7 @@ interface VariantSelectorProps {
   onVariantChange: (variantId: string) => void;
 }
 
-/**
- * VariantSelector component
- * 
- * Design decisions:
- * - Color swatches with text labels (accessibility)
- * - Large touch targets (min 44x44px)
- * - Clear active state with accent border
- * - Keyboard navigation support
- * 
- * Interaction patterns:
- * - Hover: subtle scale (tactile feedback)
- * - Active: border + scale combination
- * - Focus: visible outline for keyboard users
- * 
- * Why horizontal layout:
- * - Easier to scan (left-to-right reading)
- * - Works well on mobile and desktop
- * - Feels like a natural product picker
- */
+
 export function VariantSelector({
   variants,
   activeVariantId,
@@ -41,7 +23,7 @@ export function VariantSelector({
   const buttonsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const hasAnimated = useRef(false);
 
-  // Entrance animation on mount
+
   useEffect(() => {
     if (!hasAnimated.current && containerRef.current) {
       const buttons = buttonsRef.current.filter(
@@ -54,7 +36,7 @@ export function VariantSelector({
     }
   }, []);
 
-  // Handle keyboard navigation
+
   const handleKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
     index: number
@@ -108,7 +90,6 @@ export function VariantSelector({
               aria-checked={isActive}
               aria-label={`${variant.name}, ${variant.colorName}`}
             >
-              {/* Color Swatch */}
               <div className="relative">
                 <div
                   className="h-12 w-12 rounded-full transition-all duration-300"
@@ -136,7 +117,6 @@ export function VariantSelector({
                 )}
               </div>
 
-              {/* Color Name */}
               <span
                 className="text-xs font-light transition-colors duration-300"
                 style={{
@@ -146,7 +126,6 @@ export function VariantSelector({
                 {variant.colorName}
               </span>
 
-              {/* Hover state background */}
               <div
                 className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{

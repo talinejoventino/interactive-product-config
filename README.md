@@ -76,7 +76,7 @@ Open [http://localhost:3000](http://localhost:3000) to view.
 - **GPU-accelerated** transforms (transform + opacity)
 - **Optimized re-renders** (minimal state updates)
 
-## 🎮 User Interactions
+##  User Interactions
 
 | Action | Result |
 |--------|--------|
@@ -101,12 +101,5 @@ npm start
 npm run lint
 ```
 
-### Motion Design Philosophy
-
-- **Luxury slowness**: 0.6-0.8s transitions (premium feel)
-- **Power3 easing**: Natural acceleration/deceleration
-- **Subtle movements**: No over-animation
-- **Purposeful delays**: Stagger for visual rhythm
----
 
 Built with ❤️ using Next.js, Three.js, and GSAP
