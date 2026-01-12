@@ -72,7 +72,7 @@ function LoadingSneaker() {
 export function Sneaker3D({ accentColor }: Sneaker3DProps) {
   return (
     <div className="w-full h-full min-h-[320px] rounded-2xl overflow-hidden bg-gradient-to-br from-neutral-900/50 via-neutral-950/50 to-black/50 backdrop-blur-sm">
-      <Canvas shadows camera={{ position: [3, 1, 4], fov: 45 }}>
+      <Canvas shadows camera={{ position: [5, 1.5, 6], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <spotLight
           position={[8, 8, 5]}
